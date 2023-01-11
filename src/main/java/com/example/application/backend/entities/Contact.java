@@ -23,7 +23,7 @@ public class Contact extends AbstractEntity{
     @JoinColumn(name = "company_id")
     @NotNull
     @JsonIgnoreProperties({"employees"})
-    private Company company;
+    private CompanyEntity companyEntity;
 
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -55,12 +55,12 @@ public class Contact extends AbstractEntity{
         this.lastName = lastName;
     }
 
-    public Company getCompany() {
-        return company;
+    public CompanyEntity getCompany() {
+        return companyEntity;
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
+    public void setCompany(CompanyEntity companyEntity) {
+        this.companyEntity = companyEntity;
     }
 
     public Status getStatus() {

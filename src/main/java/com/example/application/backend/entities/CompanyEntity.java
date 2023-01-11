@@ -10,11 +10,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Entity
-public class Company extends AbstractEntity{
+public class CompanyEntity extends AbstractEntity{
     @NotBlank
     private String name;
 
-    @OneToMany(mappedBy = "company")
+    @OneToMany(mappedBy = "companyEntity")
     @Nullable
     private List<Contact> employees = new LinkedList<>();
 
