@@ -27,4 +27,8 @@ public class ContactService {
     public long count(){
         return contactRepository.count();
     }
+
+    public void delete(ContactEntity contact){
+        contactRepository.delete(contact);
+    }
 }
