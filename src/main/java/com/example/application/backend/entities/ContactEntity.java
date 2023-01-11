@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Contact extends AbstractEntity{
+public class ContactEntity extends AbstractEntity{
 
     public enum Status{
         ImportedLead, NotContacted, Contacted, Customer, ClosedLost
