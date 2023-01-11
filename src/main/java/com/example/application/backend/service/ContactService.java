@@ -6,6 +6,7 @@ import com.example.application.backend.repository.ContactRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Service
@@ -30,5 +31,13 @@ public class ContactService {
 
     public void delete(ContactEntity contact){
         contactRepository.delete(contact);
+    }
+
+    public void save(ContactEntity contact){
+        if(contact == null){
+            LOGGER.log(Level.SEVERE, "Contact is null");
+            return;
+        }
+        contactRepository.save(contact);
     }
 }
