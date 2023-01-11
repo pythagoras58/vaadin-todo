@@ -23,4 +23,8 @@ public class ContactService {
     public List<ContactEntity> findAll(){
         return contactRepository.findAll();
     }
+
+    public long count(){
+        return contactRepository.count();
+    }
 }
