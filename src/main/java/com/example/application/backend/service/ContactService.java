@@ -1,9 +1,11 @@
 package com.example.application.backend.service;
 
+import com.example.application.backend.entities.ContactEntity;
 import com.example.application.backend.repository.CompanyRepository;
 import com.example.application.backend.repository.ContactRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 @Service
@@ -16,5 +18,9 @@ public class ContactService {
     public ContactService(ContactRepository contactRepository, CompanyRepository companyRepository){
         this.contactRepository = contactRepository;
         this.companyRepository = companyRepository;
+    }
+
+    public List<ContactEntity> findAll(){
+        return contactRepository.findAll();
     }
 }
