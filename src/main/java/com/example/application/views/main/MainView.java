@@ -1,7 +1,9 @@
 package com.example.application.views.main;
 
+import com.example.application.backend.entities.ContactEntity;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -11,6 +13,9 @@ import com.vaadin.flow.router.Route;
 @PageTitle("Main")
 @Route(value = "")
 public class MainView extends HorizontalLayout {
+
+    // make a grid to hold contact data
+    Grid<ContactEntity> grid = new Grid<>(ContactEntity.class);
 
     public MainView() {
 
