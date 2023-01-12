@@ -1,6 +1,7 @@
 package com.example.application.views.main;
 
 import com.example.application.backend.entities.ContactEntity;
+import com.example.application.backend.service.ContactService;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
@@ -17,8 +18,21 @@ public class MainView extends HorizontalLayout {
     // make a grid to hold contact data
     Grid<ContactEntity> grid = new Grid<>(ContactEntity.class);
 
-    public MainView() {
+    private ContactService contactService;
 
+    public MainView(ContactService contactService) {
+        addClassName("list-view");
+        setSizeFull();
+
+        configureGrid();
+
+        add(grid);
+    }
+
+    private void configureGrid() {
+        grid.addClassName("contact-grid");
+        grid.setSizeFull();
+        grid.setColumns("firstName", "lastName", "email", "status");
     }
 
 }
