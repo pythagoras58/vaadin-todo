@@ -4,6 +4,7 @@ import org.hibernate.annotations.Formula;
 
 import javax.annotation.Nullable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 import java.util.LinkedList;
@@ -14,12 +15,18 @@ public class CompanyEntity extends AbstractEntity{
     @NotBlank
     private String name;
 
-    @OneToMany(mappedBy = "companyEntity")
+    @OneToMany(mappedBy = "companyEntity",fetch = FetchType.EAGER)
     @Nullable
     private List<ContactEntity> employees = new LinkedList<>();
 
     @Formula("(select count(c.id) from Contact c where c.company_id = id)")
     private int employeeCount;
+
+    public CompanyEntity(){}
+
+    public CompanyEntity(String name){
+        this.name = name;
+    }
 
     public String getName() {
         return name;
