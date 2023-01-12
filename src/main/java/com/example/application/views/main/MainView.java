@@ -27,6 +27,12 @@ public class MainView extends HorizontalLayout {
         configureGrid();
 
         add(grid);
+
+        updateList();
+    }
+
+    private void updateList() {
+
     }
 
     private void configureGrid() {
