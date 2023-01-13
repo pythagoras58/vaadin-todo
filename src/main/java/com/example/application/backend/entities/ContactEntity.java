@@ -11,6 +11,9 @@ import javax.validation.constraints.NotNull;
 @Table(name = "CONTACT")
 public class ContactEntity extends AbstractEntity{
 
+    /*
+    This enum can be made as class next time
+     */
     public enum Status{
         ImportedLead, NotContacted, Contacted, Customer, ClosedLost
     }
