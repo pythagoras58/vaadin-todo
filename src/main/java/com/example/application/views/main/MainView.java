@@ -33,6 +33,8 @@ public class MainView extends HorizontalLayout {
         configureGrid();
         configureFilter();
 
+        ContactForm form = new ContactForm();
+
         add(filterText, grid);
 
         updateList();
