@@ -3,6 +3,7 @@ package com.example.application.views.main;
 import com.example.application.backend.entities.CompanyEntity;
 import com.example.application.backend.entities.ContactEntity;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
@@ -37,6 +38,8 @@ public class ContactForm extends FormLayout {
         close.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
 
         // create shortcuts
+        save.addClickShortcut(Key.ENTER);
+        close.addClickShortcut(Key.ESCAPE);
 
         return new HorizontalLayout(save, delete, close);
     }
