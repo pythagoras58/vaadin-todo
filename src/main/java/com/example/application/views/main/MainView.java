@@ -46,7 +46,7 @@ public class MainView extends HorizontalLayout {
     }
 
     private void updateList() {
-        grid.setItems(contactService.findAll(this.filterText.getValue()));
+        grid.setItems(contactService.findAll(filterText.getValue()));
     }
 
     private void configureGrid() {
