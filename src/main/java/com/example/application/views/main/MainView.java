@@ -9,6 +9,7 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,10 +39,14 @@ public class MainView extends HorizontalLayout {
     }
 
     private void configureFilter() {
+        filterText.setPlaceholder("Filter By Name");
+        filterText.setClearButtonVisible(true);
+        filterText.setValueChangeMode(ValueChangeMode.LAZY);
+        filterText.addValueChangeListener(e->updateList());
     }
 
     private void updateList() {
-        grid.setItems(contactService.findAll());
+        grid.setItems(contactService.findAll(this.filterText.getValue()));
     }
 
     private void configureGrid() {
