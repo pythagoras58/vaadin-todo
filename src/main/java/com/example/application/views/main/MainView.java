@@ -30,10 +30,14 @@ public class MainView extends HorizontalLayout {
         setSizeFull();
 
         configureGrid();
+        configureFilter();
 
-        add(grid);
+        add(filterText, grid);
 
         updateList();
+    }
+
+    private void configureFilter() {
     }
 
     private void updateList() {
