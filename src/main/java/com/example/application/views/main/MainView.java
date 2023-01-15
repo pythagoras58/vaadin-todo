@@ -20,6 +20,8 @@ public class MainView extends HorizontalLayout {
     // make a grid to hold contact data
     Grid<ContactEntity> grid = new Grid<>(ContactEntity.class);
 
+    TextField filterText = new TextField(); // for text filtering.
+
     private ContactService contactService;
 
     public MainView(ContactService contactService) {
