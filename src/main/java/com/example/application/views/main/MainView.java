@@ -6,6 +6,7 @@ import com.example.application.backend.service.ContactService;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -35,7 +36,12 @@ public class MainView extends HorizontalLayout {
 
         ContactForm form = new ContactForm();
 
-        add(filterText, grid);
+        Div content = new Div(grid, form);
+        content.addClassName("content");
+        content.setSizeFull();
+
+        add(filterText, content);
+
 
         updateList();
     }
