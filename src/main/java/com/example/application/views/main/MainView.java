@@ -5,6 +5,7 @@ import com.example.application.backend.entities.ContactEntity;
 import com.example.application.backend.service.ContactService;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.notification.Notification;
@@ -17,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @PageTitle("Main")
 @Route(value = "")
+@CssImport("./themes/mytodo/styles.css")
 public class MainView extends HorizontalLayout {
 
     // make a grid to hold contact data
@@ -35,7 +37,7 @@ public class MainView extends HorizontalLayout {
         configureFilter();
 
         ContactForm form = new ContactForm();
-
+        //place the contact form in a div for responsiveness
         Div content = new Div(grid, form);
         content.addClassName("content");
         content.setSizeFull();
