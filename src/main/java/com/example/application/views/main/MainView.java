@@ -39,7 +39,7 @@ public class MainView extends HorizontalLayout {
         ContactForm form = new ContactForm();
         //place the contact form in a div for responsiveness
         Div content = new Div(grid, form);
-        content.addClassName("content");
+        content.addClassName("content"); // nice
         content.setSizeFull();
 
         add(filterText, content);
